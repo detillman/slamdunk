@@ -192,8 +192,9 @@ def getRNASeqReadSimulator(name):
 def getPlotter(name):
 
     projectPath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    lameScript = os.path.join(projectPath, "plot", name + ".R")
 
-    return os.path.join(projectPath, "plot", name + ".R")
+    return " ".join(["Rscript ", lameScript])
 
 
 def run(cmd, log=sys.stderr, verbose=False, dry=False):
